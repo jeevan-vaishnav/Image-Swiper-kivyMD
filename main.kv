@@ -1,0 +1,58 @@
+<MySwiper@MDSwiperItem> 
+    # FitImage:
+    #     source:"Images/1.jpg"
+    #     radius:[20,]
+
+MDScreen:
+    MDToolbar:
+        id:toolbar
+        title:"Our Swiper App"
+        elevation:10
+        pos_hint:{"top":1}
+
+    MDSwiper:
+        size_hint_y:None
+        height:root.height - toolbar.height - dp(40) 
+        y:root.height - self.height - toolbar.height - dp(20)
+
+        MySwiper:
+            FitImage:
+                source:"Images/1.jpg"
+                radius:[20,]
+        MySwiper:
+            FitImage:
+                source:"Images/2.jpg"
+                radius:[20,]
+
+       
+        MySwiper:
+            FitImage:
+                source:"Images/3.jpg"
+                radius:[20,]
+
+       
+        MySwiper:
+            FitImage:
+                source:"Images/4.jpg"
+                radius:[20,]
+
+       
+        MySwiper:
+            FitImage:
+                source:"Images/5.jpg"
+                radius:[20,]
+
+       
+        MySwiper:
+            FitImage:
+                source:"Images/6.jpg"
+                radius:[20,]
+
+       
+        MySwiper:
+            FitImage:
+                source:"Images/7.jpg"
+                radius:[20,]
+
+       
+       
