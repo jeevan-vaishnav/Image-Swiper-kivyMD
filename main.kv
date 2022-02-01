@@ -11,9 +11,19 @@ MDScreen:
         pos_hint:{"top":1}
 
     MDSwiper:
+        id:md_swiper
         size_hint_y:None
         height:root.height - toolbar.height - dp(40) 
         y:root.height - self.height - toolbar.height - dp(20)
+
+        on_swipe:
+        on_pre_swipe:
+        on_overswipe_right:
+        on_overswipe_left:
+        on_swipe_left:app.on_swipe_left()
+        on_swipe_right:app.on_swipe_right()
+
+
 
         MySwiper:
             FitImage:
@@ -53,6 +63,16 @@ MDScreen:
             FitImage:
                 source:"Images/7.jpg"
                 radius:[20,]
+    BoxLayout:
+        orientation:'horizontal'
 
-       
+
+        MDRaisedButton:
+            text:"Previous"
+            # on_release:md_swiper.set_current(md_swiper.get_current_index()-1)
+            on_release:if md_swiper.get_current_index() > 0:md_swiper.set_current(md_swiper.get_current_index()-1)
+        MDRaisedButton:
+            text:"Next"   
+            on_release:if md_swiper.get_current_index() < len(md_swiper.get_items())-1:md_swiper.set_current(md_swiper.get_current_index()+1)
+            # len(md_swiper.get_items())
        
